@@ -4,6 +4,23 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [
+  {
+    path: '/',
+    component: () => import(
+      /* webpackChunkName: "layouts-default-index" */
+      '@/layouts/default/Index'
+    ),
+    children: [
+      {
+        path: '/',
+        name: 'Feed-Page',
+        component: () => import(
+          /* webpackChunkName: "views-Feed"*/
+          '@/views/Feed'
+        )
+      },
+    ]
+  },
 ]
 
 const router = new VueRouter({
