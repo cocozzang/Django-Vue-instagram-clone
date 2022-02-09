@@ -1,6 +1,9 @@
 <template>
-  <v-main>
-    <v-container>
+  <v-main app>
+    <v-container
+      app
+      style="width: 614px"
+    >
       <router-view />
     </v-container>
   </v-main>
